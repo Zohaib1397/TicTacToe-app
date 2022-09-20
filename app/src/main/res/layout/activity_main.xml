@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="238dp" />
+        app:layout_constraintGuide_begin="251dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TicTacToe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
@@ -24,13 +24,13 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editTextPerson1"
         android:layout_width="240dp"
         android:layout_height="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_icon_color"
         android:drawablePadding="10dp"
@@ -40,7 +40,7 @@
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
 
     <EditText
         android:id="@+id/editTextPerson2"
@@ -59,17 +59,21 @@
         app:layout_constraintStart_toStartOf="@+id/editTextPerson1"
         app:layout_constraintTop_toBottomOf="@+id/editTextPerson1" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="Play"
+        android:transitionName="toCardView"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/editTextPerson2"
         app:layout_constraintStart_toStartOf="@+id/editTextPerson2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPerson2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editTextPerson2"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:shadowColor="@color/black"/>
     <TextView
         android:id="@+id/textErrorPlayer1"
         android:layout_width="wrap_content"

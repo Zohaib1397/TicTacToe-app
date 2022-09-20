@@ -14,7 +14,6 @@
         app:layout_constraintGuide_begin="185dp" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
@@ -61,13 +60,18 @@
         app:layout_constraintStart_toStartOf="@+id/editTextPerson1"
         app:layout_constraintTop_toBottomOf="@+id/editTextPerson1" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:shadowColor="@color/black"
         android:text="Play"
         android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:transitionName="toCardView"
         app:layout_constraintEnd_toEndOf="@+id/editTextPerson2"
         app:layout_constraintStart_toStartOf="@+id/editTextPerson2"
         app:layout_constraintTop_toBottomOf="@+id/editTextPerson2" />
