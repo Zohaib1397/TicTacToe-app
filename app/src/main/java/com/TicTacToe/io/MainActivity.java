@@ -1,11 +1,19 @@
 package com.TicTacToe.io;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 
+import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,6 +21,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    private Dialog dialog;
     private EditText edtTextPlayer1,edtTextPlayer2;
     private TextView errorPlayer1,errorPlayer2;
     private Button btnPlay;
@@ -35,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     errorPlayer2.setVisibility(View.GONE);
                     Utils.getInstance().setPerson1(edtTextPlayer1.getText().toString());
                     Utils.getInstance().setPerson2(edtTextPlayer2.getText().toString());
-                    Intent intent = new Intent(MainActivity.this,Game_Activity.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this,Board_Selection_Activity.class);
+                    Pair<View,String> pair1 = Pair.create(findViewById(R.id.btnPlay),"toCardView");
+                    ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,pair1);
+                    startActivity(intent,optionsCompat.toBundle());
+
                 }
             }
         });
